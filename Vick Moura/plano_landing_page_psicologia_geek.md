@@ -5,7 +5,7 @@
 > - **WhatsApp:** (12) 98280-0050  
 > - **E-mail:** psicovictoriamoura@gmail.com  
 > - **Instagram:** [@psicovictoriamoura](https://www.instagram.com/psicovictoriamoura/)  
-> - **Modalidades:** Atendimento Online e Presencial (Potim/SP)
+> - **Modalidades:** Atendimento 100% Online (Brasil e Exterior)
 
 ---
 
@@ -67,7 +67,7 @@ A paleta combina tons noturnos profundos (que remetem ao inconsciente e reflexã
   ├─ Headline: "Sua história merece ser escutada em todas as suas linguagens."
   ├─ Subtítulo: Espaço seguro para mulheres e adolescentes, unindo a profundidade da psicanálise com o repertório da cultura geek e da escrita terapêutica.
   ├─ CTAs: [Agendar Primeira Consulta] (Primário) · [Conheça a Abordagem] (Secundário)
-  └─ Badges de Autoridade Ética: CRP 06/189042 | Atendimento Online e Presencial (Potim/SP)
+  └─ Badges de Autoridade Ética: CRP 06/189042 | Atendimento 100% Online (Brasil e Exterior)
 
 [ 02. Sobre Mim: A Profissional e a Abordagem ]
   ├─ Foto Profissional humanizada e autêntica
@@ -100,7 +100,7 @@ A paleta combina tons noturnos profundos (que remetem ao inconsciente e reflexã
   ├─ Botões rápidos:
   │   ├─ WhatsApp Oficial: (12) 98280-0050
   │   └─ E-mail: psicovictoriamoura@gmail.com
-  ├─ Localização: Potim/SP & Atendimento Nacional Online
+  ├─ Atendimento: 100% Online (Nacional e Internacional)
   └─ Notas Legais e Éticas: Respeito estrito ao Código de Ética Profissional do Psicólogo (CFP).
 ```
 
