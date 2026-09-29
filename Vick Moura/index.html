@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Italiana&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=26">
+  <link rel="stylesheet" href="style.css?v=32">
 
   <script type="application/ld+json">
   {
@@ -182,11 +182,11 @@
       </div>
     </section>
 
-    <!-- 02. SEÇÃO SOBRE MIM (Exata à Referência com Moldura e Detalhes) -->
+    <!-- 02. SEÇÃO SOBRE MIM (Design Editorial Balanceado 3-Colunas) -->
     <section class="ref-section-about" id="sobre">
       <div class="container ref-about-grid">
         
-        <!-- Coluna da Foto com Moldura Arqueada Editorial (foto-victoria-moura.jpg) -->
+        <!-- Coluna 1: Foto Oficial em Moldura Arqueada (Esquerda) -->
         <div class="ref-about-portrait-col">
           <div class="ref-portrait-card-wrapper">
             <div class="portrait-arch-frame">
@@ -208,35 +208,42 @@
           </div>
         </div>
 
-        <!-- Coluna de Texto Central -->
+        <!-- Coluna 2: Bio, Trajetória & Abordagem (Centro) -->
         <div class="ref-about-content-col">
           <span class="greeting-lead">Olá, eu sou a</span>
           <h2 class="ref-author-name">Victória Moura</h2>
           <span class="ref-author-subtitle">Psicóloga clínica e psicanalista</span>
 
-          <p class="ref-about-text">
-          Sou psicóloga especialista em Psicanálise Clínica e Saúde Mental Feminina. Acompanho mulheres no processo de autoconhecimento por meio da psicoterapia e A Jornada da Heroína, meu projeto de escrita terapêutica inspirado no livro de mesmo nome. 
-          </p>
+          <div class="about-story-paragraphs">
+            <p class="ref-about-text">
+              Sou psicóloga especialista em Psicanálise Clínica e Saúde Mental Feminina. Acompanho mulheres no processo de autoconhecimento por meio da psicoterapia e d’<em>A Jornada da Heroína</em>, meu projeto de escrita terapêutica inspirado no livro de mesmo nome.
+            </p>
 
-          <p class="ref-about-text">
-         Vamos juntas?
-          </p>
+            <p class="ref-about-text">
+              Minha trajetória na Psicologia começou com o desejo de cuidar de mulheres e ajudá-las a reencontrar força, voz e acolhimento. Atuei como idealizadora e mediadora de oficinas terapêuticas no Fundo Social de Solidariedade e, posteriormente como psicóloga clínica no SUS, experiências que ampliaram meu olhar para as dores e histórias que atravessam a vida adulta.
+            </p>
+
+            <p class="ref-about-text">
+              Atualmente me dedico exclusivamente à clínica psicológica online, acompanhando mulheres em processos de cuidado, reconexão com a criança interior, autocompaixão e liberdade emocional, unindo Psicologia, Psicanálise, cultura geek e escrita terapêutica por meio de <em>A Jornada da Heroína</em>.
+            </p>
+          </div>
 
           <a href="#psicoterapia" class="ref-link-action">
-            <span>Saiba mais sobre mim</span>
+            <span>Saiba mais sobre a abordagem</span>
             <span class="arrow-symbol">→</span>
           </a>
         </div>
 
-        <!-- Coluna da Direita: Credenciais & Citação Cursiva -->
+        <!-- Coluna 3: Credenciais, Citação & Chamada "Vamos juntas?" (Direita) -->
         <div class="ref-about-credentials-col">
-          <div class="cred-items-stack">
-            
+          
+          <!-- Card de Credenciais Oficiais -->
+          <div class="about-credentials-card">
             <div class="cred-item">
               <div class="cred-symbol psi-sym">Ψ</div>
               <div class="cred-info">
                 <strong>CRP 06/189042</strong>
-                <span>Psicóloga e psicanalista</span>
+                <span>Psicóloga clínica e psicanalista</span>
               </div>
             </div>
 
@@ -244,7 +251,7 @@
               <div class="cred-symbol star-sym">✦</div>
               <div class="cred-info">
                 <strong>Atendimento 100% online</strong>
-                <span>(Brasil e exterior)</span>
+                <span>Brasil e exterior</span>
               </div>
             </div>
 
@@ -255,13 +262,25 @@
                 <span>de mulheres e adolescentes</span>
               </div>
             </div>
-
           </div>
 
-          <!-- Assinatura Cursiva Delicada -->
-          <div class="handwritten-accent">
-            <p class="script-quote">"Vamos dar início a jornada para despertar a heroína que existe em você. ✦"</p>
+          <!-- Citação Manuscrita Delicada -->
+          <div class="about-quote-wrapper">
+            <p class="script-quote">"Vamos dar início à jornada para despertar a heroína que existe em você. ✦"</p>
           </div>
+
+          <!-- Bloco "Vamos juntas?" & Ação de Conversão -->
+          <div class="about-invite-cta-box">
+            <div class="invite-header">
+              <span class="invite-sparkle">✦</span>
+              <strong class="invite-highlight">Vamos juntas?</strong>
+            </div>
+            <a href="#contato" class="btn btn-about-primary-cta">
+              <span>Agendar Primeira Sessão</span>
+              <span class="arrow-symbol">→</span>
+            </a>
+          </div>
+
         </div>
 
       </div>
@@ -306,125 +325,217 @@
         </div>
       </div>
 
-      <div class="container ref-jornada-grid">
+      <div class="container jornada-blocks-container">
         
-        <!-- Coluna da Esquerda: Mockup do Livro com Estrela-Guia -->
-        <div class="ref-jornada-book-col">
-          <div class="book-presentation-box">
-            <div class="compass-star-glow" aria-hidden="true">✦</div>
-            <img src="assets/images/livro-jornada-heroina-hd.png?v=5" alt="Livro de capa dura: Escrita Terapêutica com Psicóloga Victória Moura - A Jornada da Heroína" class="grimoire-book-img" width="627" height="697" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Coluna Central: Conteúdo das Modalidades -->
-        <div class="ref-jornada-content-col">
+        <!-- Header da Seção de Acompanhamento -->
+        <header class="jornada-section-intro">
           <div class="program-tag">
-            <span>Acompanhamento psicológico</span> ✦
+            <span>ACOMPANHAMENTO PSICOLÓGICO</span> ✦
           </div>
+          <h2 class="jornada-section-headline">Caminhos para o seu processo terapêutico</h2>
+          <p class="jornada-section-subhead">
+            Conheça as modalidades de atendimento estruturadas para acolher a sua história com sensibilidade, rigor técnico e escuta psicanalítica personalizada.
+          </p>
+        </header>
 
-          <div class="jornada-item-block">
-            <h2 class="ref-jornada-title">1- A Jornada da Heroína</h2>
-            <h3 class="ref-jornada-sub">Psicoterapia + Escrita Terapêutica</h3>
+        <!-- BLOCO 01: A Jornada da Heroína (Psicoterapia + Escrita Terapêutica) -->
+        <article class="jornada-section-block" id="bloco-jornada-heroina">
+          <div class="jornada-block-grid">
+            
+            <!-- Coluna Visual / Livro Mockup -->
+            <div class="jornada-block-visual-col">
+              <div class="book-presentation-box">
+                <div class="compass-star-glow" aria-hidden="true">✦</div>
+                <img src="assets/images/livro-jornada-heroina-hd.png?v=8" alt="Livro de capa dura: Escrita Terapêutica com Psicóloga Victória Moura - A Jornada da Heroína" class="grimoire-book-img" width="600" height="700" loading="lazy">
+                <div class="jornada-visual-caption">
+                  <span class="caption-star">✦</span>
+                  <span>Método Clínico Autoral</span>
+                </div>
+              </div>
+            </div>
 
-            <p class="ref-jornada-desc">
-              Um percurso terapêutico inspirado na <em>Jornada da Heroína</em> de Maureen Murdock, na psicanálise e nos estudos sobre o feminino.
-            </p>
+            <!-- Coluna de Conteúdo e Benefícios -->
+            <div class="jornada-block-details-col">
+              <div class="jornada-badge-header">
+                <span class="badge-index">01</span>
+                <span class="badge-title">Psicoterapia + Escrita Terapêutica</span>
+              </div>
 
-            <p class="ref-jornada-desc">
-              Ao longo de meses, você constrói, junto comigo, um espaço para revisitar sua história, compreender seus padrões e descobrir novas possibilidades de se relacionar consigo mesma e com o mundo.
-            </p>
+              <h3 class="jornada-block-heading">1. A Jornada da Heroína</h3>
+              <p class="jornada-block-subheading">O percurso autoral de escrita reflexiva e psicanálise</p>
+
+              <div class="jornada-block-body-text">
+                <p>
+                  Um percurso terapêutico inspirado na <em>Jornada da Heroína</em> de Maureen Murdock, na psicanálise e nos estudos sobre o feminino.
+                </p>
+                <p>
+                  Ao longo de meses, você constrói, junto comigo, um espaço para revisitar sua história, compreender seus padrões e descobrir novas possibilidades de se relacionar consigo mesma e com o mundo.
+                </p>
+              </div>
+
+              <div class="jornada-block-features-wrapper">
+                <h4 class="jornada-features-header">O que inclui neste acompanhamento:</h4>
+                <ul class="jornada-checklist-grid">
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </span>
+                    <span>Psicoterapia semanal</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </span>
+                    <span>Acompanhamento individual</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span>Estudo clínico</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+                    </span>
+                    <span>Escrita Terapêutica</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </span>
+                    <span>Side Quests (atividades personalizadas)</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span>Material da jornada</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="jornada-block-cta-row">
+                <a href="#contato" class="btn btn-jornada-primary">
+                  <span>Quero iniciar a Jornada</span>
+                  <span class="cta-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
           </div>
+        </article>
 
-          <div class="jornada-item-block">
-            <h2 class="ref-jornada-title">2- O Despertar da Heroína</h2>
-            <h3 class="ref-jornada-sub">Terapia tradicional semanal sem escrita terapêutica</h3>
-
-            <p class="ref-jornada-desc">
-              Sessões semanais de escuta psicanalítica contínua e aprofundada, dedicadas ao autoconhecimento, fortalecimento emocional e elaboração das suas questões singulares.
-            </p>
+        <!-- Separador Cósmico Delicado entre os Blocos -->
+        <div class="jornada-between-divider" aria-hidden="true">
+          <div class="divider-cosmic-line"></div>
+          <div class="divider-stars-group">
+            <span>✦</span>
+            <span class="d-center">☾</span>
+            <span>✦</span>
           </div>
-
-          <a href="#agendamento" class="btn btn-ref-ghost-dark">
-            <span>Conheça mais</span>
-            <span>→</span>
-          </a>
+          <div class="divider-cosmic-line"></div>
         </div>
 
-        <!-- Coluna da Direita: Checklist de Benefícios das Modalidades & Citação Literária -->
-        <div class="ref-jornada-features-col">
-          
-          <div class="jornada-group-section">
-            <h4 class="jornada-group-heading">A jornada da heroína:</h4>
-            <ul class="jornada-checklist">
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                </span>
-                <span>Psicoterapia semanal</span>
-              </li>
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </span>
-                <span>Acompanhamento individual</span>
-              </li>
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </span>
-                <span>Estudo clínico</span>
-              </li>
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
-                </span>
-                <span>Escrita Terapêutica</span>
-              </li>
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </span>
-                <span>Side Quests (atividades personalizadas)</span>
-              </li>
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                </span>
-                <span>Material da jornada</span>
-              </li>
-            </ul>
+        <!-- BLOCO 02: O Despertar da Heroína (Psicoterapia Tradicional) -->
+        <article class="jornada-section-block" id="bloco-despertar-heroina">
+          <div class="jornada-block-grid">
+            
+            <!-- Coluna Visual / Arte e Simbologia da Clínica -->
+            <div class="jornada-block-visual-col">
+              <div class="clinical-presentation-card">
+                <div class="clinical-aura-bg" aria-hidden="true"></div>
+                <div class="clinical-emblem-symbol">
+                  <span class="psi-large">Ψ</span>
+                </div>
+                <h4 class="clinical-card-title">Espaço Clínico</h4>
+                <p class="clinical-card-lead">Escuta psicanalítica individual, contínua e aprofundada.</p>
+                
+                <div class="clinical-feature-pills">
+                  <div class="c-pill">
+                    <span class="p-dot"></span>
+                    <span>Sessões de 50 minutos</span>
+                  </div>
+                  <div class="c-pill">
+                    <span class="p-dot"></span>
+                    <span>100% Online &amp; Sigiloso</span>
+                  </div>
+                  <div class="c-pill">
+                    <span class="p-dot"></span>
+                    <span>Resolução CFP nº 11/2018</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coluna de Conteúdo e Benefícios -->
+            <div class="jornada-block-details-col">
+              <div class="jornada-badge-header">
+                <span class="badge-index">02</span>
+                <span class="badge-title">Psicoterapia Clínica Tradicional</span>
+              </div>
+
+              <h3 class="jornada-block-heading">2. O Despertar da Heroína</h3>
+              <p class="jornada-block-subheading">Terapia tradicional semanal sem escrita terapêutica</p>
+
+              <div class="jornada-block-body-text">
+                <p>
+                  Sessões semanais de escuta psicanalítica contínua e aprofundada, dedicadas ao autoconhecimento, fortalecimento emocional e elaboração das suas questões singulares.
+                </p>
+                <p>
+                  Um ambiente acolhedor e confidencial para dar voz às suas angústias, compreender a raiz dos seus conflitos e construir novas formas de se posicionar diante da vida no seu próprio tempo.
+                </p>
+              </div>
+
+              <div class="jornada-block-features-wrapper">
+                <h4 class="jornada-features-header">O que inclui neste acompanhamento:</h4>
+                <ul class="jornada-checklist-grid">
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </span>
+                    <span>Psicoterapia semanal</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </span>
+                    <span>Acompanhamento individual</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span>Estudo clínico</span>
+                  </li>
+                  <li>
+                    <span class="j-icon">
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </span>
+                    <span>Escuta ética &amp; acolhedora</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="jornada-block-cta-row">
+                <a href="#contato" class="btn btn-jornada-secondary">
+                  <span>Agendar Psicoterapia Tradicional</span>
+                  <span class="cta-arrow">→</span>
+                </a>
+              </div>
+            </div>
+
           </div>
+        </article>
 
-          <div class="jornada-group-section">
-            <h4 class="jornada-group-heading">O Despertar da Heroína:</h4>
-            <ul class="jornada-checklist">
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                </span>
-                <span>Psicoterapia semanal</span>
-              </li>
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </span>
-                <span>Acompanhamento individual</span>
-              </li>
-              <li>
-                <span class="j-icon">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </span>
-                <span>Estudo clínico</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="jornada-divider-star">✦</div>
-
+        <!-- BLOCO 03: Citação Filosófica / Bloco de Encerramento Editorial -->
+        <div class="jornada-quote-banner-card">
+          <div class="quote-star-icon" aria-hidden="true">✦</div>
           <blockquote class="jornada-philosophical-quote">
             <p>
               "Não se trata de descobrir qual personagem você deveria ser. É sobre poder escutar a história que existe por trás das personagens que você escolheu amar."
             </p>
+            <cite>Victória Moura <span>— Psicóloga Clínica &amp; Psicanalista</span></cite>
           </blockquote>
         </div>
 
