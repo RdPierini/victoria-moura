@@ -37,17 +37,20 @@
   --font-script: 'Caveat', cursive;
   --font-display: 'Italiana', 'Cormorant Garamond', Georgia, serif;
 
-  /* Variáveis de Layout */
+  /* Variáveis de Layout & Motion (Emil Kowalski Design Engineering) */
   --container-max: 1220px;
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-pill: 9999px;
-  --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --transition: 200ms var(--ease-out);
 }
 
 /* ==========================================================================
-   RESET & BASE
+   RESET & BASE (Mobile-Native Baseline)
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -59,6 +62,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -80,13 +85,21 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: all var(--transition);
+  touch-action: manipulation;
+  transition: color var(--transition), background-color var(--transition), border-color var(--transition), transform 160ms var(--ease-out), box-shadow var(--transition), opacity var(--transition);
 }
 
 button, input, select, textarea {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  touch-action: manipulation;
+}
+
+button, .btn, [role="button"] {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 button {
@@ -280,7 +293,7 @@ ul {
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: all var(--transition);
+  transition: background-color var(--transition), color var(--transition), transform 160ms var(--ease-out), box-shadow var(--transition);
 }
 
 .btn-header-ref:hover {
@@ -290,15 +303,24 @@ ul {
   box-shadow: 0 4px 12px rgba(116, 67, 188, 0.25);
 }
 
+.btn-header-ref:active {
+  transform: scale(0.97);
+}
+
 .mobile-toggle-btn {
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 34px;
-  height: 34px;
-  padding: 6px;
+  width: 38px;
+  height: 38px;
+  padding: 8px;
   border-radius: var(--radius-sm);
   background: #F4ECFD;
+  transition: transform 140ms var(--ease-out), background-color var(--transition);
+}
+
+.mobile-toggle-btn:active {
+  transform: scale(0.95);
 }
 
 .mobile-toggle-btn span {
@@ -324,7 +346,7 @@ ul {
     radial-gradient(circle at 50% 50%, #150D2E 0%, #0A0518 100%);
   color: var(--color-text-inverse);
   min-height: min(88vh, 740px);
-  min-height: min(88dvh, 740px);
+  min-height: min(88svh, 740px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -422,7 +444,7 @@ ul {
   top: 6%;
   right: 14%;
   width: 110px;
-  animation: shootStar1 10s ease-in infinite;
+  animation: shootStar1 10s var(--ease-out) infinite;
   animation-delay: 2s;
 }
 
@@ -430,7 +452,7 @@ ul {
   top: 48%;
   right: 4%;
   width: 85px;
-  animation: shootStar2 14s ease-in infinite;
+  animation: shootStar2 14s var(--ease-out) infinite;
   animation-delay: 6.5s;
 }
 
@@ -438,13 +460,13 @@ ul {
   top: 8%;
   left: 3%;
   width: 95px;
-  animation: shootStar1 12s ease-in infinite;
+  animation: shootStar1 12s var(--ease-out) infinite;
   animation-delay: 9s;
 }
 
 @keyframes shootStar1 {
   0% {
-    transform: translate(0, 0) rotate(-35deg) scaleX(0);
+    transform: translate(0, 0) rotate(-35deg) scaleX(0.9);
     opacity: 0;
   }
   3% {
@@ -453,17 +475,17 @@ ul {
   }
   8% {
     opacity: 0;
-    transform: translate(-180px, 130px) rotate(-35deg) scaleX(0.5);
+    transform: translate(-180px, 130px) rotate(-35deg) scaleX(0.9);
   }
   100% {
     opacity: 0;
-    transform: translate(-200px, 140px) rotate(-35deg) scaleX(0);
+    transform: translate(-200px, 140px) rotate(-35deg) scaleX(0.9);
   }
 }
 
 @keyframes shootStar2 {
   0% {
-    transform: translate(0, 0) rotate(-40deg) scaleX(0);
+    transform: translate(0, 0) rotate(-40deg) scaleX(0.9);
     opacity: 0;
   }
   4% {
@@ -472,11 +494,11 @@ ul {
   }
   9% {
     opacity: 0;
-    transform: translate(-160px, 140px) rotate(-40deg) scaleX(0.4);
+    transform: translate(-160px, 140px) rotate(-40deg) scaleX(0.9);
   }
   100% {
     opacity: 0;
-    transform: translate(-170px, 150px) rotate(-40deg) scaleX(0);
+    transform: translate(-170px, 150px) rotate(-40deg) scaleX(0.9);
   }
 }
 
@@ -546,7 +568,7 @@ ul {
   letter-spacing: 0.02em;
   margin-bottom: 1.15rem;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  transition: all var(--transition);
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
   width: fit-content;
 }
 
@@ -622,7 +644,7 @@ ul {
   box-shadow: 0 6px 20px rgba(144, 97, 249, 0.45), 0 0 15px rgba(167, 139, 250, 0.3);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 160ms var(--ease-out), box-shadow 200ms var(--ease-out), background 200ms var(--ease-out);
   position: relative;
   overflow: hidden;
 }
@@ -630,7 +652,7 @@ ul {
 .btn-hero-primary svg {
   flex-shrink: 0;
   fill: #110B25;
-  transition: transform 0.25s ease;
+  transition: transform 180ms var(--ease-out);
 }
 
 .btn-hero-primary:hover {
@@ -638,6 +660,10 @@ ul {
   background: linear-gradient(135deg, #BDB0FC 0%, #9D74FF 100%);
   box-shadow: 0 10px 28px rgba(144, 97, 249, 0.65), 0 0 25px rgba(167, 139, 250, 0.5);
   color: #0A0518 !important;
+}
+
+.btn-hero-primary:active {
+  transform: scale(0.97);
 }
 
 .btn-hero-primary:hover svg {
@@ -661,11 +687,11 @@ ul {
   -webkit-backdrop-filter: blur(8px);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: transform 160ms var(--ease-out), background-color 200ms var(--ease-out), border-color 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
 }
 
 .btn-hero-secondary .cta-arrow {
-  transition: transform 0.25s ease;
+  transition: transform 180ms var(--ease-out);
   font-size: 1.05rem;
 }
 
@@ -674,6 +700,10 @@ ul {
   border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.btn-hero-secondary:active {
+  transform: scale(0.97);
 }
 
 .btn-hero-secondary:hover .cta-arrow {
@@ -694,7 +724,7 @@ ul {
   font-size: 0.875rem;
   font-weight: 600;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-  transition: all var(--transition);
+  transition: transform 160ms var(--ease-out), background-color var(--transition), border-color var(--transition);
 }
 
 .btn-ref-ghost {
@@ -706,7 +736,7 @@ ul {
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: var(--radius-pill);
-  transition: all var(--transition);
+  transition: transform 160ms var(--ease-out), color var(--transition), background-color var(--transition);
 }
 
 /* ==========================================================================
@@ -755,7 +785,7 @@ ul {
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 35px rgba(144, 97, 249, 0.25);
   aspect-ratio: 3 / 4;
   background: #150D2E;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  transition: transform 250ms var(--ease-out), box-shadow 250ms var(--ease-out);
 }
 
 .hero-psychologist-photo {
@@ -764,7 +794,7 @@ ul {
   object-fit: cover;
   object-position: center 15%;
   display: block;
-  transition: transform 0.6s ease;
+  transition: transform 280ms var(--ease-out);
 }
 
 .hero-main-photo-card:hover {
@@ -793,7 +823,7 @@ ul {
   padding: 0.55rem 0.95rem 0.55rem 0.55rem;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 20px rgba(144, 97, 249, 0.25);
   animation: floatEasel 5s ease-in-out infinite;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 220ms var(--ease-out), border-color 220ms var(--ease-out);
   user-select: none;
 }
 
@@ -1046,11 +1076,20 @@ ul {
   margin-top: 0.35rem;
   padding-bottom: 2px;
   align-self: flex-start;
+  transition: color var(--transition);
+}
+
+.ref-link-action .arrow-symbol {
+  display: inline-block;
+  transition: transform 180ms var(--ease-out);
 }
 
 .ref-link-action:hover {
   color: var(--color-accent-hover);
-  gap: 0.65rem;
+}
+
+.ref-link-action:hover .arrow-symbol {
+  transform: translateX(4px);
 }
 
 /* Coluna 3: Credenciais, Citação & Conversão (Direita) */
@@ -1185,7 +1224,7 @@ ul {
   padding: 0.75rem 1.4rem;
   border-radius: var(--radius-pill);
   box-shadow: 0 4px 16px rgba(116, 67, 188, 0.28);
-  transition: all var(--transition);
+  transition: transform 160ms var(--ease-out), box-shadow 200ms var(--ease-out), background 200ms var(--ease-out);
   width: 100%;
 }
 
@@ -1193,6 +1232,10 @@ ul {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(116, 67, 188, 0.4);
   background: linear-gradient(135deg, #8553D0 0%, #6D3DB5 100%);
+}
+
+.btn-about-primary-cta:active {
+  transform: scale(0.97);
 }
 
 /* ==========================================================================
@@ -1599,7 +1642,7 @@ ul {
   border: 1px solid rgba(191, 166, 232, 0.3);
   color: var(--color-gold-star);
   flex-shrink: 0;
-  transition: all var(--transition);
+  transition: transform 180ms var(--ease-out), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .jornada-checklist-grid li:hover .j-icon {
@@ -1627,7 +1670,7 @@ ul {
   font-weight: 700;
   border-radius: var(--radius-pill);
   box-shadow: 0 4px 18px rgba(250, 225, 172, 0.3);
-  transition: all var(--transition);
+  transition: transform 160ms var(--ease-out), box-shadow 200ms var(--ease-out), background 200ms var(--ease-out);
 }
 
 .btn-jornada-primary:hover {
@@ -1635,6 +1678,10 @@ ul {
   box-shadow: 0 8px 26px rgba(250, 225, 172, 0.45);
   background: linear-gradient(135deg, #FFF0CA 0%, #E8CD89 100%);
   color: #100824;
+}
+
+.btn-jornada-primary:active {
+  transform: scale(0.97);
 }
 
 .btn-jornada-secondary {
@@ -1648,7 +1695,7 @@ ul {
   font-size: 0.925rem;
   font-weight: 700;
   border-radius: var(--radius-pill);
-  transition: all var(--transition);
+  transition: transform 160ms var(--ease-out), background-color 200ms var(--ease-out), color 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
 }
 
 .btn-jornada-secondary:hover {
@@ -1656,6 +1703,10 @@ ul {
   color: var(--color-gold-star);
   transform: translateY(-2px);
   box-shadow: 0 6px 22px rgba(250, 225, 172, 0.25);
+}
+
+.btn-jornada-secondary:active {
+  transform: scale(0.97);
 }
 
 /* Divisor Cósmico entre Blocos */
@@ -1737,22 +1788,6 @@ ul {
   font-size: 0.85rem;
 }
 
-/* ==========================================================================
-   04. SEÇÃO CULTURA POP ✦ PSICOLOGIA GEEK (CARDS COM AS ARTES ORIGINAIS)
-   ========================================================================== */
-.ref-section-geek {
-  background-color: var(--color-bg-canvas);
-  padding: clamp(4rem, 7vw, 6rem) 0;
-  border-bottom: 1px solid var(--color-border-ref);
-}
-
-.ref-geek-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: start;
-}
-
 .sub-header-tag {
   display: inline-block;
   font-size: 0.75rem;
@@ -1762,108 +1797,8 @@ ul {
   margin-bottom: 0.35rem;
 }
 
-.ref-geek-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2rem, 3vw, 2.65rem);
-  font-weight: 700;
-  color: var(--color-text-main);
-  line-height: 1.15;
-  margin-bottom: 1rem;
-}
-
-.ref-geek-desc {
-  font-size: 0.925rem;
-  line-height: 1.68;
-  color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
-}
-
-.geek-controller-accent {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #BFA6E8;
-  margin-top: 1rem;
-}
-
-/* Grid de Cards da Psicologia Geek */
-.ref-geek-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-}
-
-.geek-art-card {
-  background-color: var(--color-bg-white);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-border-ref);
-  box-shadow: 0 4px 14px rgba(28, 21, 43, 0.04);
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-
-.geek-art-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(116, 67, 188, 0.12);
-  border-color: #CDB9EC;
-}
-
-.card-thumb-wrap {
-  position: relative;
-  height: 125px;
-  overflow: hidden;
-  background-color: #1F1538;
-}
-
-.card-thumb-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.geek-art-card:hover .card-thumb-wrap img {
-  transform: scale(1.06);
-}
-
-.card-body {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
-}
-
-.card-title {
-  font-family: var(--font-sans);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  line-height: 1.45;
-  color: var(--color-text-main);
-  margin-bottom: 1rem;
-}
-
-.card-read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.775rem;
-  font-weight: 700;
-  color: var(--color-accent-purple);
-  padding: 0;
-  align-self: flex-start;
-  transition: gap var(--transition);
-}
-
-.card-read-more:hover {
-  color: var(--color-accent-hover);
-  gap: 0.5rem;
-}
-
 /* ==========================================================================
-   05. SEÇÃO MODALIDADES CLEAN
+   04. SEÇÃO MODALIDADES CLEAN
    ========================================================================== */
 .section-modalities-clean {
   background-color: #F8F4FD;
@@ -1892,9 +1827,9 @@ ul {
 
 .clean-modalities-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(1.5rem, 3vw, 2.25rem);
-  max-width: 860px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 1.85rem);
+  max-width: 1160px;
   margin: 0 auto;
 }
 
@@ -1902,12 +1837,12 @@ ul {
   position: relative;
   background: var(--color-bg-white);
   border-radius: var(--radius-md);
-  padding: 2rem 1.6rem;
+  padding: 2.2rem 1.6rem 1.8rem;
   border: 1px solid var(--color-border-ref);
   box-shadow: 0 4px 16px rgba(28, 21, 43, 0.04);
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .clean-modality-card:hover {
@@ -1917,6 +1852,17 @@ ul {
 
 .clean-modality-card.featured-border {
   border: 1.5px solid var(--color-accent-purple);
+  box-shadow: 0 6px 20px rgba(116, 67, 188, 0.08);
+}
+
+.clean-modality-card.card-coming-soon {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF6FE 100%);
+  border: 1.5px dashed rgba(116, 67, 188, 0.35);
+}
+
+.clean-modality-card.card-coming-soon:hover {
+  border-color: var(--color-accent-purple);
+  border-style: solid;
 }
 
 .c-badge {
@@ -1928,8 +1874,16 @@ ul {
   color: #FFFFFF;
   font-size: 0.7rem;
   font-weight: 700;
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.85rem;
   border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(116, 67, 188, 0.25);
+  white-space: nowrap;
+}
+
+.c-badge.c-badge-soon {
+  background: linear-gradient(135deg, #7443BC 0%, #9055DF 100%);
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
 }
 
 .c-icon {
@@ -1943,7 +1897,7 @@ ul {
   color: var(--color-accent-purple);
   margin-bottom: 1rem;
   border: 1px solid rgba(116, 67, 188, 0.15);
-  transition: all var(--transition);
+  transition: transform 180ms var(--ease-out), background-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 .clean-modality-card:hover .c-icon {
@@ -1984,10 +1938,15 @@ ul {
   padding: 0.65rem 1rem;
   border-radius: var(--radius-pill);
   text-align: center;
+  transition: transform 160ms var(--ease-out), background-color var(--transition);
 }
 
 .btn-clean-card:hover {
   background-color: var(--color-accent-hover);
+}
+
+.btn-clean-card:active {
+  transform: scale(0.97);
 }
 
 .btn-clean-card-outline {
@@ -1998,10 +1957,42 @@ ul {
   padding: 0.65rem 1rem;
   border-radius: var(--radius-pill);
   text-align: center;
+  transition: transform 160ms var(--ease-out), background-color var(--transition), border-color var(--transition);
 }
 
 .btn-clean-card-outline:hover {
   background-color: #F4ECFD;
+}
+
+.btn-clean-card-outline:active {
+  transform: scale(0.97);
+}
+
+.btn-clean-card-outline.btn-soon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-style: dashed;
+  background-color: rgba(245, 237, 252, 0.5);
+  color: var(--color-accent-purple);
+}
+
+.btn-clean-card-outline.btn-soon:hover {
+  background-color: #F4ECFD;
+  border-style: solid;
+  border-color: var(--color-accent-purple);
+}
+
+.soon-sparkle {
+  color: var(--color-accent-purple);
+  font-size: 0.85rem;
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.btn-clean-card-outline.btn-soon:hover .soon-sparkle {
+  transform: scale(1.2) rotate(15deg);
 }
 
 /* ==========================================================================
@@ -2062,7 +2053,7 @@ ul {
   color: var(--color-accent-purple);
   border: 1px solid rgba(116, 67, 188, 0.15);
   flex-shrink: 0;
-  transition: all var(--transition);
+  transition: transform 180ms var(--ease-out), background-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 .q-item:hover .q-icon {
@@ -2142,7 +2133,7 @@ ul {
 .form-field select, 
 .form-field textarea {
   font-family: var(--font-sans) !important;
-  font-size: 0.9rem;
+  font-size: 16px;
   line-height: 1.5;
   width: 100%;
   padding: 0.75rem 0.95rem;
@@ -2150,7 +2141,7 @@ ul {
   border-radius: var(--radius-sm);
   background-color: #FCFAFF;
   color: var(--color-text-main);
-  transition: all var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .form-field textarea {
@@ -2208,13 +2199,17 @@ ul {
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
   margin-top: 0.5rem;
-  transition: all var(--transition);
+  transition: transform 160ms var(--ease-out), background-color var(--transition), box-shadow var(--transition);
 }
 
 .btn-ref-submit:hover {
   background-color: #20BA5A;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+.btn-ref-submit:active {
+  transform: scale(0.97);
 }
 
 /* ==========================================================================
@@ -2359,7 +2354,7 @@ ul {
   font-weight: 600;
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  transition: all var(--transition);
+  transition: transform 160ms var(--ease-out), background 200ms var(--ease-out), border-color 200ms var(--ease-out), color 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
 }
 
 .footer-instagram-pill:hover {
@@ -2368,6 +2363,10 @@ ul {
   color: #FFFFFF;
   transform: translateY(-2px);
   box-shadow: 0 6px 22px rgba(191, 166, 232, 0.35);
+}
+
+.footer-instagram-pill:active {
+  transform: scale(0.97);
 }
 
 .ig-icon-lg {
@@ -2431,110 +2430,11 @@ ul {
 }
 
 /* ==========================================================================
-   MODAL DE ARTIGO DA PSICOLOGIA GEEK
-   ========================================================================== */
-.geek-article-modal {
-  border: none;
-  border-radius: var(--radius-lg);
-  padding: 0;
-  max-width: 620px;
-  width: 90vw;
-  background-color: var(--color-bg-white);
-  box-shadow: 0 24px 60px rgba(17, 11, 37, 0.4);
-  margin: auto;
-}
-
-.geek-article-modal::backdrop {
-  background: rgba(14, 8, 30, 0.75);
-  backdrop-filter: blur(8px);
-}
-
-.modal-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 10;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(17, 11, 37, 0.65);
-  color: #FFFFFF;
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-}
-
-.modal-header-visual {
-  height: 220px;
-  overflow: hidden;
-  background-color: #170E30;
-}
-
-.modal-header-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.modal-body-content {
-  padding: 1.75rem 2rem 2rem;
-}
-
-.modal-tag {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-accent-purple);
-  letter-spacing: 0.08em;
-}
-
-.modal-title {
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 700;
-  color: var(--color-text-main);
-  line-height: 1.2;
-  margin: 0.35rem 0 1rem;
-}
-
-.modal-text {
-  font-size: 0.925rem;
-  line-height: 1.7;
-  color: var(--color-text-muted);
-}
-
-.modal-text p {
-  margin-bottom: 0.85rem;
-}
-
-.modal-footer {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-border-ref);
-}
-
-.modal-cta {
-  background-color: var(--color-accent-purple);
-  color: #FFFFFF;
-  border: none;
-  font-size: 0.875rem;
-  padding: 0.65rem 1.25rem;
-}
-
-/* ==========================================================================
    BOTÃO FLUTUANTE WHATSAPP
    ========================================================================== */
 .floating-whatsapp-container {
   position: fixed;
-  bottom: 25px;
+  bottom: calc(25px + env(safe-area-inset-bottom, 0px));
   right: 25px;
   z-index: 99;
   display: flex;
@@ -2574,11 +2474,15 @@ ul {
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-  transition: transform var(--transition);
+  transition: transform 160ms var(--ease-out);
 }
 
 .floating-whatsapp-btn:hover {
   transform: scale(1.08);
+}
+
+.floating-whatsapp-btn:active {
+  transform: scale(0.95);
 }
 
 .whatsapp-pulse {
@@ -2668,29 +2572,30 @@ body.menu-open .mobile-toggle-btn {
     box-sizing: border-box;
     box-shadow: -8px 0 35px rgba(14, 8, 32, 0.5);
     overflow-y: auto;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
   }
   .ref-nav.is-open {
     display: flex;
-    animation: drawerFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: drawerFadeIn 260ms var(--ease-drawer) forwards;
   }
 
   @keyframes drawerFadeIn {
     from {
       opacity: 0;
-      transform: translateY(-8px);
+      transform: translateY(-8px) scale(0.98);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
 
   /* Botão X de Fechar Visível e Acessível no Topo Direito do Menu */
   .nav-close-btn {
     position: absolute;
-    top: 1.25rem;
+    top: calc(1.25rem + env(safe-area-inset-top, 0px));
     right: 1.25rem;
     width: 44px;
     height: 44px;
@@ -2702,16 +2607,20 @@ body.menu-open .mobile-toggle-btn {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all var(--transition);
+    transition: transform 160ms var(--ease-out), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
     z-index: 10002;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
-  .nav-close-btn:hover,
-  .nav-close-btn:active {
+  .nav-close-btn:hover {
     background: rgba(167, 139, 250, 0.4);
-    transform: scale(1.08);
+    transform: scale(1.05);
     border-color: rgba(213, 184, 255, 0.85);
     box-shadow: 0 0 20px rgba(167, 139, 250, 0.6);
+  }
+  .nav-close-btn:active {
+    background: rgba(167, 139, 250, 0.4);
+    transform: scale(0.95);
+    border-color: rgba(213, 184, 255, 0.85);
   }
   .nav-close-btn svg {
     display: block;
@@ -2732,7 +2641,10 @@ body.menu-open .mobile-toggle-btn {
     padding: 0.75rem 1.5rem;
     display: block;
     border-radius: var(--radius-pill);
-    transition: all var(--transition);
+    transition: transform 140ms var(--ease-out), background-color var(--transition), color var(--transition);
+  }
+  .nav-item:active {
+    transform: scale(0.97);
   }
   .nav-item:hover,
   .nav-item.active {
@@ -2878,29 +2790,18 @@ body.menu-open .mobile-toggle-btn {
     text-align: center;
   }
 
-  /* 04. Psicologia Geek no Tablet */
-  .ref-geek-layout {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-  .geek-controller-accent {
-    justify-content: center;
-    margin-top: 0.75rem;
-  }
-  .ref-geek-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 720px;
-    margin: 0 auto;
-  }
-
-  /* 05. Psicoterapia / Modalidades no Tablet */
+  /* 04. Psicoterapia / Modalidades no Tablet */
   .clean-modalities-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     max-width: 760px;
     margin: 0 auto;
+  }
+  .clean-modality-card.card-coming-soon {
+    grid-column: span 2;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   /* 06. Contato no Tablet */
@@ -2965,6 +2866,10 @@ body.menu-open .mobile-toggle-btn {
     gap: 1.25rem;
     max-width: 440px;
     margin: 0 auto;
+  }
+  .clean-modality-card.card-coming-soon {
+    grid-column: auto;
+    max-width: 100%;
   }
 
   /* Posicionamento seguro das estrelas de fundo no Mobile/Tablet (perímetros e margens externas) */
@@ -3261,25 +3166,6 @@ body.menu-open .mobile-toggle-btn {
     line-height: 1.55;
   }
 
-  /* Seção Psicologia Geek (1 Card por linha, sem esmagamento) */
-  .ref-section-geek {
-    padding: 3rem 0;
-  }
-  .ref-geek-title {
-    font-size: 1.85rem;
-  }
-  .ref-geek-cards-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.15rem;
-  }
-  .card-thumb-wrap {
-    height: 160px;
-  }
-  .card-title {
-    font-size: 0.875rem;
-    margin-bottom: 0.75rem;
-  }
-
   /* Modalidades */
   .section-modalities-clean {
     padding: 3rem 0;
@@ -3406,16 +3292,16 @@ body.menu-open .mobile-toggle-btn {
 
   /* Botão Flutuante WhatsApp */
   .floating-whatsapp-container {
-    bottom: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
     right: 16px;
   }
   .floating-whatsapp-btn {
     width: 48px;
     height: 48px;
   }
+  /* Oculta o balão largo no smartphone para não sobrepor títulos, cards e textos */
   .floating-tooltip {
-    max-width: calc(100vw - 32px);
-    font-size: 0.74rem;
+    display: none !important;
   }
 }
 
@@ -3444,9 +3330,6 @@ body.menu-open .mobile-toggle-btn {
   .ref-jornada-title {
     font-size: 1.65rem;
   }
-  .ref-geek-title {
-    font-size: 1.65rem;
-  }
   .contact-title {
     font-size: 1.65rem;
   }
@@ -3468,5 +3351,49 @@ body.menu-open .mobile-toggle-btn {
   .bottom-nav-links li a {
     font-size: 0.72rem;
     padding: 0.3rem 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   5. TOUCH HOVER GATING & ACESSIBILIDADE DE MOTION (Emil Kowalski / Mobile-Native)
+   ========================================================================== */
+
+/* Em dispositivos touch sem ponteiro fino, neutraliza elevação de hover "grudada" pós-toque */
+@media (hover: none), (pointer: coarse) {
+  .portrait-arch-frame:hover,
+  .about-credentials-card:hover,
+  .jornada-section-block:hover,
+  .clinical-presentation-card:hover,
+  .clean-modality-card:hover,
+  .hero-main-photo-card:hover,
+  .book-presentation-box:hover .grimoire-book-img {
+    transform: none;
+  }
+  .hero-floating-easel-card:hover {
+    transform: translateX(-50%);
+  }
+}
+
+/* Respeita preferência de movimento reduzido do sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cosmic-nebula,
+  .shooting-star,
+  .twinkle-star,
+  .hero-ambient-glow,
+  .hero-floating-easel-card,
+  .online-status-dot,
+  .p-star,
+  .book-presentation-box::before,
+  .compass-star-glow,
+  .grimoire-book-img,
+  .footer-sparkle,
+  .whatsapp-pulse {
+    animation: none !important;
+  }
+  *, *::before, *::after {
+    transition-duration: 120ms !important;
   }
 }
